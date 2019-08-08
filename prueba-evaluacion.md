@@ -1,35 +1,17 @@
-# Auto evaluacion 1
+# Examen de estadística
 
-> Una pregunta sencilla.
 ---
-1. Es la ciencia destina a la bla bla bla:
-    - [ ] Diseños
-    - [x] Computadoras
-    - [ ] Otra vaina
+1. Las variables estadísticas pueden ser cualitativa y cuantitativa:
+    - (x) Verdadero
+    - ( ) Falso
 
-2. Otra de las bla la que **tiene** la ssd sad.
-    - [x] Verdaderd
-    - [ ] Falso xd 
+2. ¿Las variables **cualitativas** las podemos medir?
+    - (x) Verdadero
+    - ( ) Falso 
 
-3. lorem ipsu dolor sit `amet`
-    - (x) Falso
-    - ( ) Verdadero
-    - ( )  otra
+3. Algunos ejemplos de variables cuantitativas continuas son:
+    - [ ] Personas de un hogar
+    - [x] Altura de una persona
+    - [x] Pi (3.1415...)
 
-4. Soporta tablas para poder ilustrar las **frecuencias**:
 
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
-
-5. De la siguiente tabla de frecuencias, Cuál es el resultado del promedio?
-
-| Clases | x | fi | F | Fr
-| ------ | ------ | ------ | ------ | ------ |
-1 - 5 | 2 | 2 | .. | .. |
-5 - 10 | 4 | 6 | .. | .. |
-10 - 15 | 6 | 12 | .. | .. |
-15 - 20 | 3 | 18 | .. | .. |
-
-R:= 23.43

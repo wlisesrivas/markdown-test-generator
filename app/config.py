@@ -27,10 +27,24 @@ TEMPLATE = """<!DOCTYPE html>
             @extend .table;
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" 
+            crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="container">
-{{content}}
+    <div class="form-row">
+        <div class="container">
+            {{content}}
+        </div>
+    </div>
+    <div class="alert alert-success" role="alert">
+      3 de 3 Preguntas correctas! <b>Calificaci&oacute;n: 100% </b>
+    </div>
+    <div class="row">
+        <button class="btn btn-lg btn-success">Verificar</button>
+        <button class="btn btn-link">Reiniciar Todo</button>
+    </div>
 </div>
 </body>
 </html>
