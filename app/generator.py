@@ -33,7 +33,7 @@ def main(args=None) -> None:
     args = parse_args(args)
     md = args.mdfile.read()
 
-    extensions = ["tables", "extensions.checkbox", "extensions.radio"]
+    extensions = ["tables", "extensions.checkbox", "extensions.radio", "extensions.textbox"]
 
     html = markdown.markdown(md, extensions=extensions, output_format="html5")
     doc = jinja2.Template(TEMPLATE).render(content=html)

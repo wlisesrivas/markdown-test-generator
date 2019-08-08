@@ -23,9 +23,13 @@ First Header  | Second Header
 Content Cell  | Content Cell
 Content Cell  | Content Cell
 
+5. De la siguiente tabla de frecuencias, Cuál es el resultado del promedio?
+
 | Clases | x | fi | F | Fr
 | ------ | ------ | ------ | ------ | ------ |
 1 - 5 | 2 | 2 | .. | .. |
 5 - 10 | 4 | 6 | .. | .. |
 10 - 15 | 6 | 12 | .. | .. |
 15 - 20 | 3 | 18 | .. | .. |
+
+R:= 23.43
