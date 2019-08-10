@@ -25,7 +25,14 @@ $(function(){
             }
             // Textbox Question.
             if(self.hasClass('textbox')) {
-                var reversed = "".split("").reverse().join("");
+                var textbox = self.find('input[type="text"]');
+                var correct_text = String(textbox.data("content")).trim().split("").reverse().join("");
+                if(String(textbox.val()).trim()==correct_text) {
+                    correct += 1;
+                } else {
+                    self.addClass('text-danger');
+                    textbox.parent().find("i.text-correct").html(correct_text);
+                }
             }
         });
 
@@ -46,7 +53,8 @@ $(function(){
     }
     function resetQuestions(keep) {
         $('li.question-row').removeClass('text-danger');
-        $('#tg-msg').hide();
+        $('i.text-correct').html('');
+        $('#tg-msg').removeClass('alert-danger').removeClass('alert-success').removeClass('alert-warning').hide();
     }
     $('#check-questions').on('click', checkQuestion);
     $('#reset-questions').on('click', resetQuestions);

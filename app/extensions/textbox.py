@@ -63,4 +63,5 @@ def render_item(caption: str, value):
     return f"<li>" \
            f"<input type=\"text\" data-content=\"{correct}\" data-question=\"{fake}\" " \
            f"placeholder=\"Escriba la respuesta correcta.\" class=\"form-control\" />" \
+           f"<i class=\"text-correct\"></i>" \
            f"</li>"
