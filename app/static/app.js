@@ -2,24 +2,34 @@ $(function(){
     $('ul.radio-list,ul.checklist,ul.textbox').each(function(i, el){
         var questionClass = $(this).attr('class');
         $(this).parent().addClass('question-row').addClass(questionClass);
-        if (questionClass=='checklist') {
+        if (questionClass=='radio-list') {
             $(this).find('input[type="radio"]').attr('name', 'radio-question-' + i);
         }
     });
 
     function checkQuestion() {
+        resetQuestions(true);
+        var questions = $('li.question-row');
+        var total_questions = questions.length;
+        var correct = 0;
 
-        console.log('Checking questions...');
+        questions.each(function(i, el) {
+            var self = $(this);
+            // Single Question.
+            if (self.hasClass('radio-list')) {
+                if (self.find('input[type="radio"][data-content="1"]:checked').length == 1) {
+                    correct += 1;
+                } else {
+                    self.addClass('text-danger');
+                }
+            }
+            // Textbox Question.
+            if(self.hasClass('textbox')) {
+                var reversed = "".split("").reverse().join("");
+            }
+        });
 
-        var questions = [];
-
-        // getting single questions
-        var radio_list = $('ul.radio-list')
-        for (var i=0; i < radio_list.length; i++) {
-
-        }
-
-        showScore(3, 4);
+        showScore(correct, total_questions);
     }
 
     function showScore(correct, total) {
@@ -34,8 +44,8 @@ $(function(){
         $('#tg-score').text(score);
         $('#tg-msg').addClass(msgClass).show();
     }
-    function resetQuestions() {
-        console.log('Reset questions...');
+    function resetQuestions(keep) {
+        $('li.question-row').removeClass('text-danger');
         $('#tg-msg').hide();
     }
     $('#check-questions').on('click', checkQuestion);
