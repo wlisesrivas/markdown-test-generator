@@ -26,8 +26,8 @@ def render_test(file_name: str, markdown_content: str) -> None:
     if WRAPPER_RENDER:
         test_html = env.get_template('wrapper.html').render(content=test_html)
 
-    with open(f"./{file_name[:-2]}html", "w+") as file:  # create final file
-        file.write(test_html)
+    with open(f"./{file_name[:-2]}html", "w+") as f:  # create final file
+        f.write(test_html)
 
 
 if __name__ == "__main__":
@@ -35,8 +35,8 @@ if __name__ == "__main__":
     print("-" * 50 + "\nTest Generator v0.1\n" + "-" * 50)
     for file_name in os.listdir("./examenes"):
         if file_name not in [".", ".."]:
-            with open(f"./examenes/{file_name}", "r") as file:
+            with open(f"./examenes/{file_name}", "r") as f:
                 print(f"Convirtiendo Markdown ({file_name}) ...")
-                render_test(file_name, file.read())
+                render_test(file_name, f.read())
 
     sys.exit(0)

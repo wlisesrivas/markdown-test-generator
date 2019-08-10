@@ -56,7 +56,9 @@ class ChecklistPostprocessor(Postprocessor):
 
 
 def render_item(caption, checked):
-    checked = " checked" if checked else ""
+    correct = "1" if checked else "0"
+    fake = "0" if checked else "1"
+
     return f"<li>" \
-           f"<label><input type=\"checkbox\" {checked} />{caption}</label>" \
+           f"<label><input type=\"checkbox\" data-question=\"{fake}\" data-content=\"{correct}\" />{caption}</label>" \
            f"</li>"

@@ -17,8 +17,7 @@ class RadioExtension(Extension):
 
     def __init__(self, **kwargs):
         self.config = {
-            "list_class": ["radio-list",
-                           "class name to add to the list element"],
+            "list_class": ["radio-list", "class name to add to the list element"],
             "render_item": [render_item, "custom function to render items"]
         }
         super().__init__(**kwargs)
@@ -56,7 +55,9 @@ class RadioPostprocessor(Postprocessor):
 
 
 def render_item(caption, checked):
-    checked = " selected" if checked else ""
+    correct = "1" if checked else "0"
+    fake = "0" if checked else "1"
+
     return f"<li>" \
-           f"<label><input type=\"radio\" {checked} />{caption}</label>" \
+           f"<label><input type=\"radio\" data-question=\"{fake}\" data-content=\"{correct}\" />{caption}</label>" \
            f"</li>"
