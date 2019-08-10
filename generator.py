@@ -15,7 +15,7 @@ WRAPPER_RENDER = True
 def render_test(file_name: str, markdown_content: str) -> None:
     """Renderizar examen en formato Markdown a un HTML."""
 
-    extensions = ["tables", "extensions.checkbox", "extensions.radio", "extensions.textbox"]
+    extensions = ["tables", "app.extensions.checkbox", "app.extensions.radio", "app.extensions.textbox"]
 
     html = markdown.markdown(markdown_content, extensions=extensions, output_format="html5")
     env = Environment(loader=PackageLoader('app', 'static'), autoescape=select_autoescape(['html', 'xml']))
@@ -33,6 +33,7 @@ def render_test(file_name: str, markdown_content: str) -> None:
 if __name__ == "__main__":
     # Convertir todos los archivos .md (markdown) dentro de la carpeta [examenes]
     print("-" * 50 + "\nTest Generator v0.1\n" + "-" * 50)
+    WRAPPER_RENDER = 'eva' not in sys.argv
     for file_name in os.listdir("./examenes"):
         if file_name not in [".", ".."]:
             with open(f"./examenes/{file_name}", "r") as f:

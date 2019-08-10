@@ -14,5 +14,5 @@
     - [x] Altura de una persona
     - [x] Pi (3.1415...)
 
-4. Es la rama de las matematicas que estudia datos?
+4. Es la rama de las matemáticas que estudia la variabilidad?
     - R:= estadistica
