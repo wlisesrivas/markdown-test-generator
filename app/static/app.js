@@ -72,6 +72,11 @@ $(function(){
         $('li.question-row').removeClass('text-danger').removeClass('text-warning');
         $('i.text-correct').html('');
         $('#tg-msg').removeClass('alert-danger').removeClass('alert-success').removeClass('alert-warning').hide();
+        if(keep === true) {
+            return;
+        }
+        $('li.question-row').find('input[type="text"]').val('');
+        $('li.question-row').find('input[type="radio"],input[type="checkbox"]').prop('checked', false);
     }
     $('#check-questions').on('click', checkQuestion);
     $('#reset-questions').on('click', resetQuestions);
