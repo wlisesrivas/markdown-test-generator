@@ -34,6 +34,23 @@ $(function(){
                     textbox.parent().find("i.text-correct").html(correct_text);
                 }
             }
+            // Multiple selection Questions.
+            if(self.hasClass('checklist')) {
+                var total_corrects = self.find('input[type="checkbox"][data-content="1"]').length;
+                var total_incorrects = self.find('input[type="checkbox"][data-content="0"]').length;
+                var correct_selected = self.find('input[type="checkbox"][data-content="1"]:checked').length;
+                var incorrect_selected = self.find('input[type="checkbox"][data-content="0"]:checked').length;
+                var qc = +((correct_selected / total_corrects) - (incorrect_selected/total_incorrects)).toFixed(2);
+                if (qc < 0) {
+                    qc = 0;
+                }
+                correct += qc;
+                if (qc == 0) {
+                    self.addClass('text-danger');
+                } else if (qc > 0 && qc < 1) {
+                    self.addClass('text-warning');
+                }
+            }
         });
 
         showScore(correct, total_questions);
@@ -52,7 +69,7 @@ $(function(){
         $('#tg-msg').addClass(msgClass).show();
     }
     function resetQuestions(keep) {
-        $('li.question-row').removeClass('text-danger');
+        $('li.question-row').removeClass('text-danger').removeClass('text-warning');
         $('i.text-correct').html('');
         $('#tg-msg').removeClass('alert-danger').removeClass('alert-success').removeClass('alert-warning').hide();
     }
