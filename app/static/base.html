@@ -5,12 +5,12 @@
             {{ content |safe }}
         </div>
     </div>
-    <div class="alert alert-success" role="alert">
-        3 de 3 Preguntas correctas! <b>Calificaci&oacute;n: 100% </b>
+    <div id="tg-msg" class="alert" role="alert" style="display: none">
+        <span id="tg-correct-questions"></span> Preguntas correctas! <b>Calificaci&oacute;n: <span id="tg-score"></span>%</b>
     </div>
     <div class="row">
-        <button class="btn btn-lg btn-success">Verificar</button>
-        <button class="btn btn-link">Reiniciar Todo</button>
+        <button id="check-questions" class="btn btn-lg btn-success">Verificar</button>
+        <button id="reset-questions" class="btn btn-link">Reiniciar Todo</button>
     </div>
-    <script type="text/javascript">{{ javascript }}</script>
+    <script type="text/javascript">{{ javascript |safe }}</script>
 </div>
