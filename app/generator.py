@@ -5,10 +5,9 @@
 import argparse
 import sys
 
-import jinja2
 import markdown
-
-from config import TEMPLATE
+from jinja2 import Environment, PackageLoader, select_autoescape
+from slimit import minify
 
 
 def parse_args(args=None):
@@ -36,7 +35,12 @@ def main(args=None) -> None:
     extensions = ["tables", "extensions.checkbox", "extensions.radio", "extensions.textbox"]
 
     html = markdown.markdown(md, extensions=extensions, output_format="html5")
-    doc = jinja2.Template(TEMPLATE).render(content=html)
+    env = Environment(loader=PackageLoader('app', 'static'), autoescape=select_autoescape(['html', 'xml']))
+    javascript = env.get_template('app.js').render()
+    # minifier javascript
+    # todo minifier js
+    # js = minify(javascript)
+    doc = env.get_template('base.html').render(content=html, javascript=javascript)
 
     args.out.write(doc)
 
