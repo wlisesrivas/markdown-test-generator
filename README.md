@@ -40,7 +40,7 @@ Los examenes resultantes tendran el mismo nombre del archivo markdown pero con s
 en el folder principal de la aplicacion.
 
 ### Estructura del examen (Markdown)
-Aunque es basado en markdown para su formato de estilo, por el momento se soportan las siguientes tipos de preguntas:
+Aunque es basado en markdown para su formato de estilo, por el momento se soportan los siguientes tipos de preguntas:
 
 1. **Pregunta de una seleccion**:
 ```text
@@ -48,8 +48,8 @@ Aunque es basado en markdown para su formato de estilo, por el momento se soport
     - (x) Verdadero
     - ( ) Falso
 ```
-Note que la respuesta correcta esta especificada con una *x* (x o X, mayuscula o minuscula) y deben estar en 
-parentesis para espeficiar que es solo una que se va a seleccionar, por ejemplo, para preguntas de falso y verdadero.
+Note que la respuesta correcta esta especificada con una **x** (x o X, mayuscula o minuscula) y deben estar en 
+parentesis para espeficiar que es solo una que se va a seleccionar, por ejemplo, para preguntas de falso o verdadero.
 
 2. **Pregunta de seleccion multiple**:
 ```text
@@ -58,7 +58,7 @@ parentesis para espeficiar que es solo una que se va a seleccionar, por ejemplo,
     - [x] Altura de una persona
     - [x] Pi (3.1415...)
 ```
-Al igual que la anterior, pero este tipo de pregunta permite seleccionar mas de una a la vez, deben estar entre corchetes
+Muy similar a la anterior pero este tipo de pregunta permite seleccionar mas de una a la vez, deben estar entre corchetes
 con una *x* a las respuestas correctas. El resultado a este tipo de preguntas es prorateado, es decir, debe seleccionar solo las
 correctas para que esa pregunta se interprete como correcta.
 
@@ -70,5 +70,12 @@ las preguntas deben ser de seleccion multiple o de una seleccion, no puede mezcl
 4. Es la rama de las matemáticas que estudia la variabilidad?
     - R:= estadistica
 ```
-Es una pregunta abierta donde se debe escribir la respuesta correcta, esta se especifica en la siguiente linea de la pregunta
+Es una pregunta donde se debe escribir la respuesta correcta, esta se especifica en la siguiente linea de la pregunta
  precedida por **R:=** (R o r, mayuscula o minuscula) luego la respuesta correcta (se valida sin importar que sea mayuscula o minuscula)
+
+### Disenar el examen
+Hay varias herramientas por ahi en internet (en linea y/o descargables) que te premiten pre-visualizar archivos Markdown.
+Algunas online de ejemplo:
+
+1. https://dillinger.io/
+2. https://markdownlivepreview.com/
