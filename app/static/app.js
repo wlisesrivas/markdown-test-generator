@@ -27,7 +27,7 @@ $(function(){
             if(self.hasClass('textbox')) {
                 var textbox = self.find('input[type="text"]');
                 var correct_text = String(textbox.data("content")).trim().split("").reverse().join("");
-                if(String(textbox.val()).trim()==correct_text) {
+                if(String(textbox.val()).trim().toLowerCase()==correct_text.toLowerCase()) {
                     correct += 1;
                 } else {
                     self.addClass('text-danger');
