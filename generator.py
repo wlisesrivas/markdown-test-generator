@@ -10,6 +10,7 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 
 # Renderizar el resultando incluyendo jQuery, Bootstrap.
 WRAPPER_RENDER = True
+LOOKUP_FOLDER = './examenes'
 
 
 def render_test(file_name: str, markdown_content: str) -> None:
@@ -33,10 +34,12 @@ def render_test(file_name: str, markdown_content: str) -> None:
 if __name__ == "__main__":
     # Convertir todos los archivos .md (markdown) dentro de la carpeta [examenes]
     print("-" * 50 + "\nTest Generator v0.1\n" + "-" * 50)
-    WRAPPER_RENDER = 'eva' not in sys.argv
+
+    WRAPPER_RENDER = 'embed' not in sys.argv
+
     for file_name in os.listdir("./examenes"):
-        if file_name not in [".", ".."]:
-            with open(f"./examenes/{file_name}", "r") as f:
+        if file_name.endswith('.md'):
+            with open(os.path.join(LOOKUP_FOLDER, file_name), "r") as f:
                 print(f"Convirtiendo Markdown ({file_name}) ...")
                 render_test(file_name, f.read())
 
