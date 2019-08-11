@@ -3,10 +3,10 @@ Es una herramienta para generar exámenes a partir de un archivo Markdown. Esto 
 que puedes estructurar el formato que tendrá el texto, negrita, cursiva, tablas, etc.
 
 Markdown<br>
-![p1](https://raw.githubusercontent.com/wlisesrivas/markdown-test-generator/develop/app/static/sample-md.png)
+![p1](https://raw.githubusercontent.com/wlisesrivas/markdown-test-generator/development/app/static/sample-md.png)
 
 Examen generado<br>
-![p2](https://raw.githubusercontent.com/wlisesrivas/markdown-test-generator/develop/app/static/sample-animation.gif)
+![p2](https://raw.githubusercontent.com/wlisesrivas/markdown-test-generator/development/app/static/sample-animation.gif)
 
 ### Requerimientos
 [Python-3.7.x](https://www.python.org/downloads/release/python-374/)
