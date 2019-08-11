@@ -1,0 +1,16 @@
+
+<div class="container">
+    <div class="form-row">
+        <div class="container">
+            {{ content |safe }}
+        </div>
+    </div>
+    <div id="tg-msg" class="alert" role="alert" style="display: none">
+        <span id="tg-correct-questions"></span> Preguntas correctas! <b>Calificaci&oacute;n: <span id="tg-score"></span>%</b>
+    </div>
+    <div class="row">
+        <button id="check-questions" class="btn btn-lg btn-success">Verificar</button>
+        <button id="reset-questions" class="btn btn-link">Reiniciar Todo</button>
+    </div>
+    <script type="text/javascript">{{ javascript |safe }}</script>
+</div>
